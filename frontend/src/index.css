@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+
+
+
+body {
+  min-height: 100vh;
+}
+
+
+
+.app {
+  width: 80%;
+  margin: auto;
+}
+
+
+
+

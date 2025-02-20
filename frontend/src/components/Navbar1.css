@@ -1,0 +1,23 @@
+/* padding: 2rem; p-8 */
+
+.navbar1 {
+  height: 4rem; /* h-16 */
+  background-color: red; /* bg-white */
+  border-bottom: 1px solid #e5e7eb; /* border-b (Tailwind default border color) */
+  display: flex; /* flex */
+  align-items: center; /* items-center */
+  justify-content: space-between; /* justify-between */
+}
+
+.custom-button {
+  background-color: #7e22ce; /* bg-purple-600 */
+  color: white; /* text-white */
+  /* p-8 (applies padding on all sides) */
+  padding-left: 1rem; /* px-4 (overrides left/right padding) */
+  padding-right: 1rem; /* px-4 (overrides left/right padding) */
+  padding-top: 0.5rem; /* py-2 (overrides top padding) */
+  padding-bottom: 0.5rem; /* py-2 (overrides bottom padding) */
+  border-radius: 0.25rem; /* rounded */
+}
+
+/* padding: 2rem;  */

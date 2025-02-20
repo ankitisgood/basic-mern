@@ -21,7 +21,7 @@ const Navbar = ({ setShowLogin }) => {
 
   const logout = async () => {
     try {
-      await axios.post("http://localhost:4000/api/user/logout");
+      await axios.post(url +"/api/user/logout");
       // localStorage.setItem("token", null);
       localStorage.removeItem("token");
       console.log("logged out")

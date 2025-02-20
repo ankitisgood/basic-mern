@@ -37,6 +37,8 @@ const loginUser = async (req,res) => {
         // res.json({success:true,token})
         res.cookie("jwt", token, {
             httpOnly: true,
+            secure: true,  // Must be true for HTTPS (Render is HTTPS)
+            sameSite: "None",
         }).status(200).json({ success: true, token, user });
     } catch (error) {
         console.log(error);
@@ -71,6 +73,8 @@ const registerUser = async (req,res) => {
         const token = createToken(user._id)
         res.cookie("jwt", token, {
             httpOnly: true,
+            secure: true,  // Must be true for HTTPS (Render is HTTPS)
+            sameSite: "None",
         }).status(200).json({ success: true, token, user });
 
     } catch(error){
@@ -81,7 +85,11 @@ const registerUser = async (req,res) => {
 
 export const logout = async (req, res) => {
 	try {
-		res.cookie("jwt", "");
+		res.clearCookie("jwt", {
+            httpOnly: true,
+            sameSite: "none",
+            secure: true,
+        });
 		res.status(200).json({ message: "Logged out successfully" });
 	} catch (error) {
 		console.log("Error in logout controller", error.message);
